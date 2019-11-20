@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: mwdsbe
+Version: 1.0.0
+Summary: Toolkit for data related to minority, women, and disabled-owned businesses in Philadelphia
+Home-page: UNKNOWN
+Author: Nick Hand
+Maintainer: Nick Hand
+Maintainer-email: nick.hand@phila.gov
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
