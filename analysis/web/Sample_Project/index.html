@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>MWDSBE Report - Dabin Lee</title>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, user-scalable=no"
+		/>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+		<!-- <header id="header">
+				<a class="logo" href="index.html">Industrious</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header> -->
+
+		<!-- Nav -->
+		<!-- <nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="elements.html">Elements</a></li>
+					<li><a href="generic.html">Generic</a></li>
+				</ul>
+			</nav> -->
+
+		<!-- Heading -->
+		<div id="heading">
+			<div class="inner">
+				<h1>Minority Business in Philadelphia</h1>
+				<h3>Office of The Controller | Dabin Lee</h3>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<div class="content">
+					<header>
+						<h2>Overview</h2>
+					</header>
+					<p>
+						In 2019, for the first time since the goal was established
+						five years ago, Philadelphia exceeded 35 percent participation
+						of minority-, women-, and disabled-owned businesses
+						(M/W/DSBEs) on City contracts. Philadelphia’s diversity is one
+						of the key drivers behind the city’s recent achievements. The
+						city’s diverse population is an invaluable asset that
+						strengthens the economy and presents unique opportunities for
+						all. The success of diverse local businesses is innately
+						linked to the overall success of Philadelphia’s economy. Here,
+						we are going to discuss how we have gathered and prepared data
+						and what we have found.
+					</p>
+					<p>
+						<b>Goal:</b> Build out interactive dashboard and map
+						highlighting major trends around geographic location, payment
+						amounts, certification type, etc.
+					</p>
+					<hr />
+					<h3>The Data</h3>
+					<ul>
+						<li><b>Registry</b>: all registered MWDSBE</li>
+						<li>
+							<b>License</b>: Commercial Activity Licenses. Information
+							includes license information such as license number,
+							activeness, etc.
+						</li>
+						<li>
+							<b>State License</b>: list of sales tax licenses, exemption
+							and wholesaler certificates as maintained by the Department
+							of Revenue (DOR) that are active
+						</li>
+						<li>
+							<b>Payments</b>: includes checks and ACH (direct deposit)
+							payments made by the City during 2017 fiscal year
+						</li>
+						<li>
+							<b>Professional Services</b>: Professional Services
+							Contracts by fiscal quarter from 2013 to 2019
+						</li>
+					</ul>
+					<p>
+						Unfortunately, the provided data do not listen to each other,
+						which causes major problem to combine all data into one for
+						analysis. We are interested MWDSBE by neighborhoods,
+						certification types, and payments by the city, etc. In order
+						to achieve these, we:
+					</p>
+					<ul>
+						<li>
+							Downloaded the registry data provided by Office of Economic
+							Opportunity (OEO)
+						</li>
+						<li>
+							Geocoded the businesses: added latitude/longitude to each
+							business
+						</li>
+						<li>
+							Matched this registry against other publicly available
+							dataset, based on vendor name
+						</li>
+					</ul>
+					<p>
+						<i
+							>Across all of the datasets, we’ve matched about 60% of the
+							companies in the registry</i
+						>
+					</p>
+					<hr />
+					<h3>Analysis of Registered Businesses</h3>
+					<blockquote>
+						Below analysis is done only with the registry and payments
+						data to see the overview of our final dashbroad. The final
+						dashbroad will be similar but contain more information such as
+						demographics, exact payments of all year, etc.
+					</blockquote>
+					<dl>
+						<dt>Where are the most registered businesses located?</dt>
+						<dd>
+							<p>
+								This map shows the neighborhoods with the most MWDSBE.
+								It is suprising to see top 20 neighborhoods are the
+								expensive areas in Philadelphia. Especially, the
+								majority of businesses are located in Rittenhouse
+								square, which is the most pricy neighborhood in
+								Philadelphia. Since these are the minority businesses,
+								we expected they are located in neighborhoods with
+								comparatively cheap property prices.
+							</p>
+							<div
+								class="tableauPlaceholder"
+								id="viz1574452413025"
+								style="position: relative"
+							>
+								<noscript
+									><a href="#"
+										><img
+											alt=" "
+											src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ma&#47;map_nhoods_2&#47;Dashboard3&#47;1_rss.png"
+											style="border: none"/></a></noscript
+								><object class="tableauViz" style="display:none;"
+									><param
+										name="host_url"
+										value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+									<param name="embed_code_version" value="3"/>
+									<param name="site_root" value=""/><param
+										name="name"
+										value="map_nhoods_2&#47;Dashboard3"/><param
+										name="tabs"
+										value="no"/><param
+										name="toolbar"
+										value="yes"/><param
+										name="static_image"
+										value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ma&#47;map_nhoods_2&#47;Dashboard3&#47;1.png"/>
+									<param name="animate_transition" value="yes"/><param
+										name="display_static_image"
+										value="yes"/><param
+										name="display_spinner"
+										value="yes"/><param
+										name="display_overlay"
+										value="yes"/><param
+										name="display_count"
+										value="yes"/><param
+										name="filter"
+										value="publish=yes"
+								/></object>
+							</div>
+							<script type="text/javascript">
+								var divElement = document.getElementById(
+									'viz1574452413025'
+								);
+								var vizElement = divElement.getElementsByTagName(
+									'object'
+								)[0];
+								if (divElement.offsetWidth > 800) {
+									vizElement.style.width = '1000px';
+									vizElement.style.height = '827px';
+								} else if (divElement.offsetWidth > 500) {
+									vizElement.style.width = '1000px';
+									vizElement.style.height = '827px';
+								} else {
+									vizElement.style.width = '100%';
+									vizElement.style.height = '727px';
+								}
+								var scriptElement = document.createElement('script');
+								scriptElement.src =
+									'https://public.tableau.com/javascripts/api/viz_v1.js';
+								vizElement.parentNode.insertBefore(
+									scriptElement,
+									vizElement
+								);
+							</script>
+							<img src="images/locations.png" />
+						</dd>
+						<br /><br />
+						<dt>
+							In-State vs Out-of-State
+						</dt>
+						<dd>
+							<p>
+								This map shows the businesses in Pennsylvania and out of
+								Pennsylvania. In the future, we may interest in
+								analyzing among businesses around Pannsylvania such as
+								New Jersy and Delaware.
+							</p>
+							<div
+								class="tableauPlaceholder"
+								id="viz1574453493735"
+								style="position: relative"
+							>
+								<noscript
+									><a href="#"
+										><img
+											alt=" "
+											src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PA&#47;PANJDE&#47;Dashboard2&#47;1_rss.png"
+											style="border: none"/></a></noscript
+								><object class="tableauViz" style="display:none;"
+									><param
+										name="host_url"
+										value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+									<param name="embed_code_version" value="3"/>
+									<param name="site_root" value=""/><param
+										name="name"
+										value="PANJDE&#47;Dashboard2"/><param
+										name="tabs"
+										value="no"/><param
+										name="toolbar"
+										value="yes"/><param
+										name="static_image"
+										value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PA&#47;PANJDE&#47;Dashboard2&#47;1.png"/>
+									<param name="animate_transition" value="yes"/><param
+										name="display_static_image"
+										value="yes"/><param
+										name="display_spinner"
+										value="yes"/><param
+										name="display_overlay"
+										value="yes"/><param
+										name="display_count"
+										value="yes"/><param
+										name="filter"
+										value="publish=yes"
+								/></object>
+							</div>
+							<script type="text/javascript">
+								var divElement = document.getElementById(
+									'viz1574453493735'
+								);
+								var vizElement = divElement.getElementsByTagName(
+									'object'
+								)[0];
+								if (divElement.offsetWidth > 800) {
+									vizElement.style.width = '1000px';
+									vizElement.style.height = '827px';
+								} else if (divElement.offsetWidth > 500) {
+									vizElement.style.width = '1000px';
+									vizElement.style.height = '827px';
+								} else {
+									vizElement.style.width = '100%';
+									vizElement.style.height = '1027px';
+								}
+								var scriptElement = document.createElement('script');
+								scriptElement.src =
+									'https://public.tableau.com/javascripts/api/viz_v1.js';
+								vizElement.parentNode.insertBefore(
+									scriptElement,
+									vizElement
+								);
+							</script>
+						</dd>
+						<br /><br />
+						<dt>
+							In-City vs Out-of-City
+						</dt>
+						<dd>
+							<p>
+								As we can see in the map below, about 50% of MWDSBE in
+								Pennsylvania are located in Philadephia.
+							</p>
+							<div
+								class="tableauPlaceholder"
+								id="viz1574453438565"
+								style="position: relative"
+							>
+								<noscript
+									><a href="#"
+										><img
+											alt=" "
+											src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PA&#47;PANJDE&#47;Dashboard1&#47;1_rss.png"
+											style="border: none"/></a></noscript
+								><object class="tableauViz" style="display:none;"
+									><param
+										name="host_url"
+										value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+									<param name="embed_code_version" value="3"/>
+									<param name="site_root" value=""/><param
+										name="name"
+										value="PANJDE&#47;Dashboard1"/><param
+										name="tabs"
+										value="no"/><param
+										name="toolbar"
+										value="yes"/><param
+										name="static_image"
+										value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PA&#47;PANJDE&#47;Dashboard1&#47;1.png"/>
+									<param name="animate_transition" value="yes"/><param
+										name="display_static_image"
+										value="yes"/><param
+										name="display_spinner"
+										value="yes"/><param
+										name="display_overlay"
+										value="yes"/><param
+										name="display_count"
+										value="yes"/><param
+										name="filter"
+										value="publish=yes"
+								/></object>
+							</div>
+							<script type="text/javascript">
+								var divElement = document.getElementById(
+									'viz1574453438565'
+								);
+								var vizElement = divElement.getElementsByTagName(
+									'object'
+								)[0];
+								if (divElement.offsetWidth > 800) {
+									vizElement.style.width = '1000px';
+									vizElement.style.height = '827px';
+								} else if (divElement.offsetWidth > 500) {
+									vizElement.style.width = '1000px';
+									vizElement.style.height = '827px';
+								} else {
+									vizElement.style.width = '100%';
+									vizElement.style.height = '1027px';
+								}
+								var scriptElement = document.createElement('script');
+								scriptElement.src =
+									'https://public.tableau.com/javascripts/api/viz_v1.js';
+								vizElement.parentNode.insertBefore(
+									scriptElement,
+									vizElement
+								);
+							</script>
+						</dd>
+						<br /><br />
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<dt>Top 10 Vendors by payments in 2017</dt>
+								<img src="./images/vendors.png" />
+							</div>
+							<div class="col-6 col-12-medium">
+								<dt>Top 10 Departments by payments in 2017</dt>
+								<img src="./images/departments.png" />
+							</div>
+						</div>
+					</dl>
+					<hr />
+					<h3>Future Directions</h3>
+					<p>
+						As mentioned earlier, we are trying to combine different data
+						gathered by different departments using matching algorithms.
+						We have matched about 60% of the companies in the registry and
+						trying to get more detailed but private-access data from
+						Office of Economic Opportunity department. After of all, our
+						interactive dashboard will contain more interesting and
+						detailed information such as license activeness, exact payment
+						amounts, demographic(race/ethnicity), etc.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="copyright">
+				&copy; Office of The Controller | Dabin Lee
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
