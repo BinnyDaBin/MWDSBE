@@ -23,16 +23,17 @@ var app = new Vue({
 			}
 		).addTo(mymap);
 
-		L.marker([51.5, -0.09]).addTo(mymap);
-		// marker.bindPopup('<b>Hello world!</b><br>I am a popup.').openPopup();
+		var layer = L.marker([39.940278, -75.153351]).addTo(mymap);
+		layer.bindTooltip('<b>Hello world!</b><br>I am a popup.');
 
 		function onMapClick(e) {
-			L.popup()
-				.setLatLng(e.latlng)
-				.setContent('<b>Location: </b>' + e.latlng.toString())
-				.openOn(mymap);
+			layer.tooltipopen();
+			// L.popup()
+			// 	.setLatLng(e.latlng)
+			// 	.setContent('<b>Location: </b>' + e.latlng.toString())
+			// 	.openOn(mymap);
 		}
 
-		mymap.on('click', onMapClick);
+		mymap.on('mouseover', onMapClick);
 	}
 });
