@@ -9,6 +9,7 @@ import CompanyData from "../data/company.json";
 import PhillyMSA from "../data/Philly_MSA.json";
 // import Neighborhoods from "../data/neighborhoods.json";
 import numberByNhoods from "../data/n_neighborhoods.json";
+import markerIcon from "../assets/marker.png";
 
 export default {
   name: "Map",
@@ -33,26 +34,18 @@ export default {
       }
     ).addTo(map);
 
+    // Philadelphia MSA boundary
     var MSAStyle = {
       color: "#949190",
       weight: 5,
       opacity: 0.65
     };
 
-    //     var nhoodsStyle = {
-    //       color: "#0B0B0A",
-    //       fillColor: "#80CC10",
-    //       weight: 5,
-    //       opacity: 0.8
-    //     };
-
     L.geoJson(PhillyMSA, {
       style: MSAStyle
     }).addTo(map);
-    //     L.geoJson(numberByNhoods, {
-    //       style: nhoodsStyle
-    //     }).addTo(map);
 
+    // Company Locations
     function getColor(n) {
       return n > 1000
         ? "#800026"
@@ -82,59 +75,27 @@ export default {
       };
     }
 
+    // Neighborhoods
     L.geoJson(numberByNhoods, {
       style: style
     }).addTo(map);
 
-    var geojsonMarkerOptions = {
-      radius: 8,
-      fillColor: "#DAF7A6",
-      color: "#000",
-      weight: 1,
-      opacity: 1,
-      fillOpacity: 0.6
-    };
+    var marker = L.icon({
+      iconUrl: markerIcon,
+
+      iconSize: [20, 20]
+    });
 
     L.geoJSON(CompanyData, {
       pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions);
+        return L.marker(latlng, { icon: marker });
       }
     })
       .bindTooltip(function(layer) {
         return layer.feature.properties.company_name;
       })
       .addTo(map);
-
-    //     L.geoJson(CompanyData, {
-    //       style: {
-    //         color: "#ff7800"
-    //       }
-    //     })
-    //       .bindTooltip(function(layer) {
-    //         return layer.feature.properties.company_name;
-    //       })
-    //       .addTo(map);
   }
-
-  // circle markers
-
-  //     var geojsonMarkerOptions = {
-  //       radius: 8,
-  //       fillColor: "#DAF7A6",
-  //       color: "#000",
-  //       weight: 1,
-  //       opacity: 1,
-  //       fillOpacity: 0.8
-  //     };
-
-  //   L.geoJSON(this.geojsonFeature, {
-  //     pointToLayer: function(feature, latlng) {
-  //       return L.circleMarker(latlng, geojsonMarkerOptions);
-  //     }
-  //   }).bindTooltip(function(layer) {
-  //   return layer.feature.properties.company_name;
-  // })
-  // .addTo(map);
 };
 </script>
 
